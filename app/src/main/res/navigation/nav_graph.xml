@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.jetpacknavigationtest.ui.main.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setup_navigation"
+            app:destination="@id/setup_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.example.jetpacknavigationtest.ui.download.DownloadFragment"
+        android:label="DownloadFragment">
+
+        <action
+            android:id="@+id/action_downloadFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@+id/main"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <navigation
+        android:id="@+id/setup_navigation"
+        app:startDestination="@id/page1Fragment">
+        <fragment
+            android:id="@+id/page1Fragment"
+            android:name="com.example.jetpacknavigationtest.ui.setup.page1.Page1Fragment"
+            android:label="Page1Fragment">
+            <action
+                android:id="@+id/action_page1Fragment_to_page2Fragment"
+                app:destination="@id/page2Fragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/page2Fragment"
+            android:name="com.example.jetpacknavigationtest.ui.setup.page2.Page2Fragment"
+            android:label="Page2Fragment">
+            <action
+                android:id="@+id/action_page2Fragment_to_page3Fragment"
+                app:destination="@id/page3Fragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/page3Fragment"
+            android:name="com.example.jetpacknavigationtest.ui.setup.page3.Page3Fragment"
+            android:label="Page3Fragment">
+
+            <action
+                android:id="@+id/action_page3Fragment_to_downloadFragment"
+                app:destination="@id/downloadFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popUpTo="@+id/setup_navigation" />
+
+            <action
+                android:id="@+id/action_page3Fragment_to_downloadFragment_no_pop"
+                app:destination="@id/downloadFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_downloadFragment3"
+            app:destination="@id/downloadFragment" />
+
+
+    </navigation>
+    <!--<action-->
+    <!--android:id="@+id/action_downloadFragment_to_mainFragment"-->
+    <!--app:popUpToInclusive="false"-->
+    <!--app:popUpTo="@id/main" />-->
+</navigation>
