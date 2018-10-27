@@ -1,6 +1,6 @@
 package com.example.jetpacknavigationtest.ui.download
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 class DownloadViewModel : ViewModel() {
     // TODO: Implement the ViewModel
