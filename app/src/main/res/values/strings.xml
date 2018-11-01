@@ -9,6 +9,6 @@
 
     <string name="next_button">Next</string>
     <string name="search">search</string>
-    <string name="importTitle">Import</string>
-    <string name="galleryTitle">Gallery</string>
+    <string name="setupMenuTitle">Setup</string>
+    <string name="downloadMenuTitle">Download</string>
 </resources>
