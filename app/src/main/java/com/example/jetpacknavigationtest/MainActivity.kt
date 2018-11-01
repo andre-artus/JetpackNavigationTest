@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onSupportNavigateUp() = drawer_layout.navigateUp(navController)
+    override fun onSupportNavigateUp() = navController.navigateUp(drawer_layout)
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
